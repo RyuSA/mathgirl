@@ -1,25 +1,28 @@
+import random
 import numpy as np
 import time
 
 start = time.time()
 
 def SENTINEL_LINER_SERCH(A,n,v):
-    np.append(A,v)
-    k = 1
+    print A
+    A = np.append(A,v)
+    print A
+    k = 0
     while  A[k] != v:
         k += 1
-    if k <= n:
+    if k < n:
         return 'found'
     return '404'
 
 # Define the range
 Min = 1
-Max = 10000000
+Max = 10
 
 # Sub A, n, v
 N = Max
 LIST = np.random.randint(Min,Max,N)
-V = np.random.randint(Min,Max,1)
+V = random.randint(Min,Max)
 result = SENTINEL_LINER_SERCH(LIST,N,V)
 result_time = time.time()-start
 
