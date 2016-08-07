@@ -9,7 +9,7 @@ def LINER_SERCH(A,n,v):
         if A[k] == v:
             return 'found'
         k += 1
-    return '404'
+    return 'not found'
 
 # Define the range
 Min = 1
@@ -22,5 +22,6 @@ V = randint(Min,Max,1)
 result = LINER_SERCH(LIST,N,V)
 result_time = time.time()-start
 
+print 'serch ' + str(V) + ' from ' + str(LIST)
 print result
 print str(result_time) + 'sec'
