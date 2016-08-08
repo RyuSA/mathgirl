@@ -17,7 +17,7 @@ def QUICK_SORT(A,L,R):
     return A
 
 Min = 1
-Max = 1000
+Max = 10
 
 N = Max
 LIST = np.random.randint(Min,Max,N)
