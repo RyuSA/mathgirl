@@ -1,7 +1,6 @@
 import time
 import numpy as np
 
-start = time.time()
 def QUICK_SORT(A,L,R):
     if L < R:
         p = L
@@ -16,14 +15,19 @@ def QUICK_SORT(A,L,R):
         A = QUICK_SORT(A,p+1,R)
     return A
 
-Min = 1
-Max = 10
+# mesure time from here
+start = time.time()
 
+# set the range for random
+Min = 1
+Max = 1000
 N = Max
+
+# get a list consisted by N random integers in [min,max]
 LIST = np.random.randint(Min,Max,N)
 N -= 1
 
-
+# sort by quick
 LIST = QUICK_SORT(LIST,0,N)
 
 print LIST
