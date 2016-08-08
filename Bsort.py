@@ -1,4 +1,5 @@
 import time
+import numpy as np
 
 start = time.time()
 
@@ -20,9 +21,14 @@ def BUBBLE_SORT(A,n):
         m -= 1
     return A
 
-LIST = [3,4,6,2,5,0,82,1]
-N = len(LIST)
+Min = 1
+Max = 1000
+
+N = Max
+LIST = np.random.randint(Min,Max,N)
 
 BUBBLE_SORT(LIST,N)
 
+
 print LIST
+print str(time.time()-start) + 'sec'
