@@ -1,29 +1,25 @@
-import random
 import numpy as np
+import random
 import time
+import search
 
-start = time.time()
+def SLsearch(howmany):
+    # Define the range
+    Min = 1
+    Max = 100000
 
-def SENTINEL_LINER_SERCH(A,n,v):
-    A = np.append(A,v)
-    k = 0
-    while  A[k] != v:
-        k += 1
-    if k < n:
-        return 'found'
-    return 'not found'
+    # Sub A, n, v
+    f = open('SLsearch.txt','w')
 
-# Define the range
-Min = 1
-Max = 10000000
+    LIST = np.random.randint(Min,Max,Max)
 
-# Sub A, n, v
-N = Max
-LIST = np.random.randint(Min,Max,N)
-V = random.randint(Min,Max)
-result = SENTINEL_LINER_SERCH(LIST,N,V)
-result_time = time.time()-start
+    for i in xrange(howmany):
+        start = time.time()
+        V = random.randint(Min,Max)
+        search.SENTINEL_LINER_SERCH(LIST,Max,V)
+        result_time = str(time.time()-start)
+        f.write(result_time)
+        f.write('\n')
 
-print 'serch ' + str(V) + ' from ' + str(LIST)
-print result
-print str(result_time) + 'sec'
+    print('done')
+    f.close()

@@ -1,27 +1,25 @@
-from numpy.random import *
+import numpy as np
+import random
 import time
+import search
 
-start = time.time()
+def Lsearch(howmany):
+    # Define the range
+    Min = 1
+    Max = 100000
 
-def LINER_SERCH(A,n,v):
-    k = 1
-    while  k < n:
-        if A[k] == v:
-            return 'found'
-        k += 1
-    return 'not found'
+    # Sub A, n, v
+    f = open('Lsearch.txt','w')
 
-# Define the range
-Min = 1
-Max = 10000000
+    LIST = np.random.randint(Min,Max,Max)
 
-# Sub A, n, v
-N = Max
-LIST = randint(Min,Max,N)
-V = randint(Min,Max,1)
-result = LINER_SERCH(LIST,N,V)
-result_time = time.time()-start
+    for i in xrange(howmany):
+        start = time.time()
+        V = random.randint(Min,Max)
+        search.LINER_SERCH(LIST,Max,V)
+        result_time = str(time.time()-start)
+        f.write(result_time)
+        f.write('\n')
 
-print 'serch ' + str(V) + ' from ' + str(LIST)
-print result
-print str(result_time) + 'sec'
+    print('done')
+    f.close()
