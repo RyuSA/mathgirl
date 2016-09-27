@@ -25,3 +25,19 @@ def QUICK_SORT(A,L,R):
         A = QUICK_SORT(A,L,p-1)
         A = QUICK_SORT(A,p+1,R)
     return A
+
+def RANDOMIZED_QUICK_SORT(A,L,R):
+    if L < R:
+        r = np.random.randint(L,R)
+        A[L], A[r] = A[r], A[L]
+        p = L
+        k = L+1
+        while k <= R:
+            if A[k] < A[L]:
+                A[p+1], A[k] = A[k], A[p+1]
+                p += 1
+            k += 1
+        A[L], A[p] = A[p], A[L]
+        A = RANDOMIZED_QUICK_SORT(A,L,p-1)
+        A = RANDOMIZED_QUICK_SORT(A,p+1,R)
+    return A

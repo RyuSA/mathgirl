@@ -1,37 +1,25 @@
 import numpy as np
-import math
 import random
 import time
+import search
 
-start = time.time()
+def Bsearch(howmany):
+    # Define the range
+    Min = 1
+    Max = 100000
 
-def BINARY_SEARCH(A,n,v):
-    a = 0
-    b = n-1
-    while  a <= b :
-        k = int(math.floor((a+b)/2))
-        if A[k] == v:
-            return 'found'
-        elif A[k] < v:
-            a = k+1
-        else:
-            b = k-1
-    return 'not found'
+    # Sub A, n, v
+    f = open('Bsearch.txt','w')
 
-# Define the range
-Min = 1
-Max = 10000000
+    for i in xrange(howmany):
+        V = random.randint(Min,Max)
+        LIST = np.random.randint(Min,Max,Max)
+        LIST = np.sort(LIST)
+        start = time.time()
+        search.BINARY_SEARCH(LIST,Max,V)
+        result_time = str(time.time()-start)
+        f.write(result_time)
+        f.write('\n')
 
-# Sub A, n, v
-N = Max
-LIST = np.random.randint(Min,Max,N)
-# quick sort
-# LIST = np.sort(LIST,kind='mergesort')
-LIST = np.sort(LIST)
-V = random.randint(Min,Max)
-result = BINARY_SEARCH(LIST,N,V)
-result_time = time.time()-start
-
-print 'serch ' + str(V) + ' from ' + str(LIST)
-print result
-print str(result_time) + 'sec'
+    print('done')
+    f.close()
