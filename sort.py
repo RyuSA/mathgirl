@@ -14,6 +14,8 @@ def BUBBLE_SORT(A):
 
 def QUICK_SORT(A,L,R):
     if L < R:
+        # if you wanna compare QUICK_SORT and RANDOMIZED_QUICK_SORT, you may use randint
+        np.random.randint(L,R)
         p = L
         k = L+1
         while k <= R:
