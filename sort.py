@@ -43,3 +43,16 @@ def RANDOMIZED_QUICK_SORT(A,L,R):
         A = RANDOMIZED_QUICK_SORT(A,L,p-1)
         A = RANDOMIZED_QUICK_SORT(A,p+1,R)
     return A
+
+def BOGO_SORT(A):
+    set_range = range(0,A.size -1)
+    # if A is ssorted, ignore while
+    while not isSorted(A,set_range):
+        np.random.shuffle(A)
+
+def isSorted(B,Range):
+    for i in Range:
+        # if there exist some illegal in the given array, return false
+        if B[i] > B[i+1]:
+            return False
+    return True

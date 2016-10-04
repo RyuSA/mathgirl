@@ -14,12 +14,11 @@ def Bsearch(howmany):
     for i in xrange(howmany):
         V = random.randint(Min,Max)
         LIST = np.random.randint(Min,Max,Max)
-        LIST = np.sort(LIST)
         start = time.time()
         search.BINARY_SEARCH(LIST,Max,V)
         result_time = str(time.time()-start)
         f.write(result_time)
         f.write('\n')
 
-    print('done')
+    print('binary done')
     f.close()

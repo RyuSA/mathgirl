@@ -17,6 +17,6 @@ def rquicksort(howmany):
         result_time = str(time.time()-start)
         f.write(result_time)
         f.write('\n')
-    print('quicksort done')
+    print('Rquicksort done')
     f.close()
     return LIST

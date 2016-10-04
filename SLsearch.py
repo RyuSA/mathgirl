@@ -21,5 +21,5 @@ def SLsearch(howmany):
         f.write(result_time)
         f.write('\n')
 
-    print('done')
+    print('Slinear search done')
     f.close()

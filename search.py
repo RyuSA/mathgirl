@@ -25,6 +25,7 @@ def SENTINEL_LINER_SERCH(A,n,v):
 def BINARY_SEARCH(A,n,v):
     a = 0
     b = n-1
+    A.sort()
     while  a <= b :
         k = int(math.floor(b + (a-b)/2))
         if A[k] == v:

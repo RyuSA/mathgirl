@@ -14,19 +14,33 @@ def RANDOM_WALK_3SAT(f,n,R):
     r = 1
     while r <= R:
         a = np.random.choice(hoge,n)
-        # a is a list containing booleans x1 x2 x3,...
+        """
+        a is a list containing booleans x1 x2 x3,...
+        - example
+            a = [True,False,True,False] (randomly)
+            this means (x1,x2,x3,x4) = (True,False,True,False)
+        """
         k = 1
         while k <= 3*n:
-            # SATISFIED return false if a satisfies f, else return the valuable in a which doesn't match f
+            """
+            SATISFIED return True(boolean) if a satisfies f
+            else return a modified valuable which doesn't match f in a
+            """
             test = SATISFIED(f,a)
             if (type(test) == bool ):
                 return a
+            """
+            then a doesn't match f, let a be test and run SATISFIED again
+            """
             a = test
             k += 1
         r += 1
     return False
 
 def Or(f):
+    """
+    f is booleans
+    """
     m = 0
     for boolean in f:
         m += int(boolean)
@@ -36,7 +50,7 @@ def Or(f):
         return False
 
 def SATISFIED(clauses,a):
-    # if a satisfies clauses, return a itself otherwise return modified a
+    # if a satisfies clauses, return True otherwise return modified a
     for clause in clauses:
         b = []
         """

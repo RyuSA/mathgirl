@@ -12,13 +12,13 @@ times = int(raw_input())
 #
 # L.Lsearch(times)
 #
-# Bsearch.Bsearch(times)
-#
+Bsearch.Bsearch(times)
+
 # a = Bsort.bubblesort(times)
 # print a
 #
-a = Q.quicksort(times)
-print a
-
-a = RQ.rquicksort(times)
-print a
+# a = Q.quicksort(times)
+# print a
+#
+# a = RQ.rquicksort(times)
+# print a

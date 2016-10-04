@@ -21,5 +21,5 @@ def Lsearch(howmany):
         f.write(result_time)
         f.write('\n')
 
-    print('done')
+    print('linear search done')
     f.close()
